@@ -1,0 +1,23 @@
+{{ header }} 
+{% if (top) %} 
+<section class="top">{{ top }}</section>
+{% endif %} 
+<div class="container">
+	<div class="row">{{ column_left }} 
+		{% if (column_left and column_right) %} 
+		{% set class = 'col-lg-12 col-sm-8' %} 
+		{% elseif (column_left or column_right) %} 
+		{% set class = 'col-lg-15 col-sm-13' %} 
+		{% else %} 
+		{% set class = 'col-sm-18' %} 
+		{% endif %} 
+		<div id="content" class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
+		{{ column_right }} 
+	</div>
+</div>
+{% if (bottom) %} 
+<section class="bottom">
+	{{ bottom }} 
+</section>
+{% endif %} 
+{{ footer }}

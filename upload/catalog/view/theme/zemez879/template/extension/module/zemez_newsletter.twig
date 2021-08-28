@@ -1,0 +1,43 @@
+<div id="tm-newsletter" class="box newsletter">	
+	<div class="box-heading"><h3>{{ heading_newsletter_title }}</h3></div>
+	<div class="box-content">
+		<form class="clearfix" method="post" enctype="multipart/form-data" id="tm-newsletter-form">				
+			<div class="box-content clearfix">
+			{% if (description) %}<div class="newsletter-description">{{ description }}</div>{% endif %}
+			<div class="tm-login-form">				
+				<input type="text" name="zemez_newsletter_email" value="" placeholder="{{ entry_mail }}"
+				id="input-tm-newsletter-email" class="form-control"/>
+				<label class="control-label" for="input-tm-newsletter-email"></label>
+			</div>			
+			<span id="tm-newsletter_error" class="newsletter-error"></span>
+			<span id="tm-newsletter_success" class="newsletter-success"></span> <button type="submit" id="tm-newsletter-button" class="btn-primary pull-right">{{ button_subscribe }}</button>
+			</div>
+		</form>	
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		$('#tm-newsletter').submit(function(e) {
+			e.preventDefault();
+			$.ajax({
+				url: 'index.php?route=extension/module/zemez_newsletter/addNewsletter',
+				type: 'POST',
+				dataType: 'json',
+				data: $('#tm-newsletter').find('input[type=\'text\']'),
+				success: function(json) {
+					if (json['success']) {
+						$('#tm-newsletter_error').html('');
+						$('#tm-newsletter_success').stop(true, true).html(json['success']).fadeIn(300).delay(4000).fadeOut(300);
+					} else {
+						$('#tm-newsletter_success').html('');
+						$('#tm-newsletter_error').stop(true, true).html(json['error']).fadeIn(300).delay(4000).fadeOut(300);
+					}
+				},
+				error: function(xhr, ajaxOptions, thrownError) {
+					console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				}
+			});
+		});
+	});
+	</script>

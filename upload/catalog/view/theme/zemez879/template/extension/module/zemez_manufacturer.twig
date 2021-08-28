@@ -1,0 +1,27 @@
+
+<div class="box manufacturer">
+	<div class="box-heading"><h2>{{ heading_title }}</h2></div>
+	<div class="box-content">		
+			{% if (categories) %} {% set i=1 %} 
+			<table class="brand-table">
+				<tbody>	
+					<tr>		
+					{% for manufacturer in categories['manufacturer'] %} {% if (i < 13) %}						
+					<td>
+						<a href="{{ manufacturer['href'] }}">
+						{% if (manufacturer['image']) %} 
+							<img src="image/{{ manufacturer['image'] }}" alt="{{ manufacturer['name'] }}" class="img-responsive" />
+						{% else %} {{ manufacturer['name'] }} {% endif %}	
+						</a>
+					</td>
+					{% if (i%6 == 0 and i < 12) %} 
+					</tr>
+					<tr> {% endif %} 
+						{% set i = i + 1 %} {% endif %}{% endfor %}
+					</tr>				
+				</tbody>
+			</table>
+			{% endif %}		
+		<div class="clear"></div>		
+	</div>
+</div>
