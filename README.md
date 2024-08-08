@@ -20,37 +20,8 @@ The Food Ordering Website is a platform that allows users to browse, select, and
 ![Screenshot (370)](https://github.com/user-attachments/assets/97f63e81-1e8e-449f-937e-c815555a99b7)
 
 
-**Important!**
-- If your bug report is not related to the core code (such as a 3rd party module or your server configuration) then the issue will be closed without a reason. You must contact the extension developer, use the forum or find a commercial partner to resolve a 3rd party code issue.
-- If you would like to report a serious security bug please PM an OpenCart moderator/administrator on the forum. Please do not report concept/ideas/unproven security flaws - all security reports are taken seriously but you must include the EXACT details steps to reproduce it. Please DO NOT post security flaws in a public location.
-
-
-## Versioning
-
-The version is broken down into 4 points e.g 1.2.3.4 We use MAJOR.MINOR.FEATURE.PATCH to describe the version numbers.
-
-A MAJOR is very rare, it would only be considered if the source was effectively re-written or a clean break was desired for other reasons. This increment would likely break most 3rd party modules.
-
-A MINOR is when there are significant changes that affect core structures. This increment would likely break some 3rd party modules.
-
-A FEATURE version is when new extensions or features are added (such as a payment gateway, shipping module etc). Updating a feature version is at a low risk of breaking 3rd party modules.
-
-A PATCH version is when a fix is added, it should be considered safe to update patch versions e.g 1.2.3.4 to 1.2.3.5
-
-
 ## How to install
 
-Please read the installation instructions included in the repository or download file.
+Please read the installation instructions included in the repository or download the file.
 
-## License
 
-[GNU General Public License version 3 (GPLv3)](https://github.com/opencart/opencart/blob/master/license.txt)
-
-## Links
-
-- [OpenCart homepage](http://www.opencart.com/)
-- [OpenCart forums](http://forum.opencart.com/)
-- [OpenCart blog](http://www.opencart.com/index.php?route=feature/blog)
-- [How to documents](http://docs.opencart.com/)
-- [Newsletter](http://newsletter.opencart.com/h/r/B660EBBE4980C85C)
-- [User Voice suggestions](http://opencart.uservoice.com)
